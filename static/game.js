@@ -29,7 +29,7 @@ let groundImage = new Image();
 let coinImage = new Image();
 
 skyImage.src = '/static/Sky.png';     // Ensure these paths are correct and point to your static folder
-groundImage.src = '/static/Ground.png';
+groundImage.src = '/static/ground.png';
 coinImage.src = '/static/coin.png';
 
 // Ensure images are loaded before drawing
