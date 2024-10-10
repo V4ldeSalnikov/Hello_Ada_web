@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kid-Friendly Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Aligning the microphone and enter button */
+        #input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #microphoneIcon {
+            margin-bottom: 10px; /* Add spacing between the microphone and the button */
+        }
+
+        #enterButton {
+            background-color: green;
+            color: white;
+            padding: 15px 40px;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="game-title">Kid-Friendly Game</h1>
+
+    <div id="input-container">
+        <input type="text" id="commandInput" placeholder="Enter command here">
+        <img id="microphoneIcon" src="{{ url_for('static', filename='microphone.png') }}" alt="Microphone" width="50" height="50">
+        <button id="enterButton">Enter</button>
+        <p id="errorMessage"></p>  <!-- Error message will display here -->
+    </div>
+
+    <div id="game-info">
+        <p id="score">Score: 0</p>
+        <p id="commands">Commands: move left, move right, jump, change color</p>
+    </div>
+
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>

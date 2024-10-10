@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+#game-title {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+#input-container {
+    margin: 20px auto;
+    width: 780px;
+    background-color: #ffb6c1;  /* Pink background */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#commandInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: blue;
+    border: none;
+    outline: none;
+}
+
+#error-message {
+    font-size: 18px;
+    color: red;  /* Red text for error */
+    text-align: left;
+    margin-top: 5px;
+    display: none;  /* Initially hidden */
+}
+
+/* Add this for the error message */
+#errorMessage {
+    color: red;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#game-info {
+    margin: 10px auto;
+    width: 780px;
+}
+
+#score {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#commands {
+    font-size: 18px;
+    font-style: italic;
+    text-align: left;
+}
+
+#gameCanvas {
+    border: 1px solid black;
+    display: block;
+    margin: 20px auto;
+    background-color: lightblue;
+}
+
+#output {
+    font-size: 18px;
+    margin-top: 20px;
+}
