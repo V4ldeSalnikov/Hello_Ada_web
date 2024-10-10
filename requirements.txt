@@ -1,4 +1,4 @@
-﻿annotated-types==0.7.0
+annotated-types==0.7.0
 blinker==1.8.2
 blis==1.0.1
 catalogue==2.0.10
@@ -34,6 +34,7 @@ preshed==3.0.9
 pydantic==2.9.2
 pydantic_core==2.23.4
 Pygments==2.18.0
+pyspellchecker==0.8.1
 PyYAML==6.0.2
 regex==2024.9.11
 requests==2.32.3
