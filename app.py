@@ -5,7 +5,6 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
-# Load the spaCy model
 nlp = spacy.load("en_core_web_sm")
 
 # Initialize Danish spell checker
@@ -113,8 +112,7 @@ def extract_direction_action_color(doc):
 
 def normalize_command(input_text):
     """
-    Normalize user input to a standard command using NLP and spell correction.
-    Handles both English and Danish inputs, with synonym handling and typo correction.
+    Normalize user input to a standard command
     """
     detected_language = detect_language(input_text)
 
