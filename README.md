@@ -20,4 +20,8 @@ This is a web-based game developed using Flask and JavaScript, with **NLP** and 
 - **Speech Recognition**: Integrated using native web APIs for voice input
 - **Graphics**: Canvas API for rendering the game and player movement
 
+## Game Screenshot
+
+![Game Screenshot](./Screenshot 2024-10-14 at 12.11.51.png)
+
 
