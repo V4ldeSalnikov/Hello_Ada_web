@@ -20,19 +20,4 @@ This is a web-based game developed using Flask and JavaScript, with **NLP** and 
 - **Speech Recognition**: Integrated using native web APIs for voice input
 - **Graphics**: Canvas API for rendering the game and player movement
 
-## Installation
 
-### Prerequisites
-
-- **Python 3.x**
-- **Flask**
-- **spaCy** and **English language model** (`en_core_web_sm`)
-- **TextBlob**
-- **pyspellchecker**
-
-### Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo-link
-   cd your-repo-folder
