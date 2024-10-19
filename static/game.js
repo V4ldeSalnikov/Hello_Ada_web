@@ -233,7 +233,42 @@ function startSpeechRecognition() {
         document.getElementById('errorMessage').innerText = 'Error occurred in speech recognition: ' + event.error;
     };
 }
+let codeSequence = [];  // Array to store the code block sequence
 
+// Function to add a block to the code sequence
+function addCodeBlock(text, blockType = "command-block") {
+    // Create a new block visually
+    const block = document.createElement('div');
+    block.className = `code-block ${blockType}`;
+    block.innerText = text;
+    document.getElementById('code-blocks').appendChild(block);
+
+    // Add the command to the code sequence array
+    codeSequence.push(text);
+}
+
+function runCode() {
+    codeSequence.forEach(command => {
+        if (command.includes('move left')) {
+            movePlayer('left');
+        } else if (command.includes('move right')) {
+            movePlayer('right');
+        } else if (command.includes('jump')) {
+            jump();
+        } else if (command.includes('change color')) {
+            const color = command.split(' ').slice(-1)[0];
+            if (color === 'random') {
+                changeColor();
+            } else {
+                changeColor(color);
+            }
+        }
+    });
+
+    // Clear the code sequence after running
+    codeSequence = [];
+    document.getElementById('code-blocks').innerHTML = '';  // Clear the visual blocks
+}
 // Add event listener for microphone click
 document.getElementById('microphoneIcon').addEventListener('click', startSpeechRecognition);
 
