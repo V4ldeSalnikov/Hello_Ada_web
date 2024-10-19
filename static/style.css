@@ -71,3 +71,36 @@ body {
     font-size: 18px;
     margin-top: 20px;
 }
+
+/* Code section styling */
+#code-section {
+    margin: 20px auto;
+    width: 780px;
+    padding: 15px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+#code-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Styling for blue and green blocks */
+.code-block {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.command-block {
+    background-color: #1e90ff; /* Blue for commands */
+}
+
+.enter-block {
+    background-color: #32cd32; /* Green for enter */
+}
