@@ -39,13 +39,20 @@
 
     <!-- Add new Code section for Scratch-like blocks -->
     <div id="code-section">
-        <h3>Code:</h3>
-        <div id="code-blocks"></div> <!-- Blocks will be added here -->
-    </div>
+    <h3>Code:</h3>
+    <div id="code-blocks"></div> <!-- Blocks will be added here -->
 
-    <div id="game-info">
-        <p id="score">Score: 0</p>
-        <p id="commands">Commands: move left, move right, jump, change color</p>
+    <!-- Add buttons for manually adding code blocks -->
+    <button onclick="addCodeBlock('move left')">Move Left</button>
+    <button onclick="addCodeBlock('move right')">Move Right</button>
+    <button onclick="addCodeBlock('jump')">Jump</button>
+    <button onclick="addCodeBlock('change color random')">Change Color</button>
+
+    <!-- Warning message area -->
+    <p id="warningMessage" style="color: red; font-weight: bold;"></p>
+
+    <!-- Run Code Button -->
+    <button id="runCodeButton" onclick="runCode()" class="run-code-btn">Run Code</button>
     </div>
 
     <canvas id="gameCanvas" width="800" height="600"></canvas>
