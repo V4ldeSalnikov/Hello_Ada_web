@@ -4,30 +4,31 @@ const ctx = canvas.getContext('2d');
 // Player properties
 let player = {
     x: 375,
-    y: canvas.height - 100 - 50,  
+    y: canvas.height - 100 - 50,  // Start player on the ground
     width: 50,
     height: 50,
     color: 'black',
     speed: 50,
-    dy: 0,  
-    gravity: 1.5,  
-    jumpPower: -20,  
-    grounded: true  
+    dy: 0,  // Vertical velocity for jumping
+    gravity: 1.5,  // Gravity value that pulls player down
+    jumpPower: -20,  // Jump velocity when jumping
+    grounded: true  // Is the player on the ground?
 };
 
 let coin = {
     x: Math.random() * (canvas.width - 50),
-    y: canvas.height - 150,  
+    y: canvas.height - 150,  // Ensure the coin appears above ground
     size: 50
 };
 
 let score = 0;  // Initialize score
 
+// Load images for sky, ground, and coin
 let skyImage = new Image();
 let groundImage = new Image();
 let coinImage = new Image();
 
-skyImage.src = '/static/Sky.png';    
+skyImage.src = '/static/Sky.png';
 groundImage.src = '/static/ground.png';
 coinImage.src = '/static/coin.png';
 
@@ -42,7 +43,7 @@ function imageLoaded() {
     }
 }
 
-
+// Add event listeners to check when the images are loaded
 skyImage.onload = imageLoaded;
 groundImage.onload = imageLoaded;
 coinImage.onload = imageLoaded;
@@ -142,24 +143,40 @@ function handleCommand(commandInputValue) {
 
         if (processedCommand.includes('move left')) {
             movePlayer('left');
+            addCodeBlock("move left");
         } else if (processedCommand.includes('move right')) {
             movePlayer('right');
+            addCodeBlock("move right");
         } else if (processedCommand.includes('change color')) {
             const color = processedCommand.split(' ').slice(-1)[0];
             if (color === 'random') {
                 changeColor();
+                addCodeBlock("change color random");
             } else {
                 changeColor(color);
+                addCodeBlock(`change color ${color}`);
             }
         } else if (processedCommand.includes('jump')) {
             jump();
+            addCodeBlock("jump");
         } else {
             // Display error message if command is not recognized
             document.getElementById('errorMessage').innerText = 'Unrecognized command or invalid color. Please try again.';
         }
+
+        // After any valid command, add the green "Enter" block
+        addCodeBlock("Enter", "enter-block");
     });
 
     document.getElementById('commandInput').value = '';  // Clear input field
+}
+
+// Function to add a code block to the "Code" section
+function addCodeBlock(text, blockType = "command-block") {
+    const block = document.createElement('div');
+    block.className = `code-block ${blockType}`;
+    block.innerText = text;
+    document.getElementById('code-blocks').appendChild(block);
 }
 
 // Add event listener for the Enter key
@@ -221,4 +238,4 @@ function startSpeechRecognition() {
 document.getElementById('microphoneIcon').addEventListener('click', startSpeechRecognition);
 
 // Run the updateGame function repeatedly at a set interval
-setInterval(updateGame, 30);  
+setInterval(updateGame, 30);  // Call updateGame 30 times per second
