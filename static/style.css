@@ -104,3 +104,24 @@ body {
 .enter-block {
     background-color: #32cd32; /* Green for enter */
 }
+
+/* Green "Run Code" button styling */
+.run-code-btn {
+    background-color: green;
+    color: white;
+    padding: 15px 40px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px; /* Place it below the code blocks */
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto; /* Center it */
+}
+
+/* Style for the warning message */
+#warningMessage {
+    font-size: 18px;
+    text-align: center;
+}
